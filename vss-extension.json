@@ -1,0 +1,49 @@
+{
+    "manifestVersion": 1,
+    "id": "elsa-export-import-task ",
+    "name": "Elsa Export/Import Task",
+    "version": "0.0.1",
+    "publisher": "swissteach-ag",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Export all current versions of elsa workflow definitions to json files. Imports Elsa workflow definitions from json files to Elsa.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"
+    },
+    "files": [
+        {
+            "path": "exporttask"
+        },
+        {
+            "path": "importtask"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "custom-build-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "exporttask"
+            }
+        },
+        {
+            "id": "custom-build-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "importtask"
+            }
+        }        
+    ]
+}
