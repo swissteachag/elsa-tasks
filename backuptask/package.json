@@ -1,5 +1,5 @@
 {
-  "name": "elsa-export-workflow-definition",
+  "name": "elsa-import-workflow-definition",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

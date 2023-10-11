@@ -1,0 +1,55 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "5b02f149-4a8e-4f56-97e7-20df00bde70c",
+    "name": "elsa-backup-workflow-definition",
+    "friendlyName": "Elsa backup Workflow Definition",
+    "description": "Task to backup  workflow definitions from an Elsa server into a .zip file",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Guido Walter (Swissteach AG)",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 8
+    },
+    "instanceNameFormat": "Elsa Backup Workflow Definition",
+    "inputs": [
+        {
+            "name": "bearerToken",
+            "type": "multiLine",
+            "label": "bearerToken for ELSA API",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "bearerToken for ELSA API"
+        },
+        {
+            "name": "backupElsaServerUrl",
+            "type": "string",
+            "label": "ELSA Server Url",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "URL for ELSA Server"
+        },
+        {
+            "name": "backupIds",
+            "type": "multiLine",
+            "label": "Backup Ids",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Comma-seperated list of workflow IDs to backup. If empty, all workflows will be backed up."
+        },
+        {
+            "name": "backupOutputPath",
+            "type": "filePath",
+            "label": "Path for storing the exported workflow definition",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Specifiy path for output directoy"
+        }
+    ],
+    "execution": {
+        "Node": {
+            "target": "index.js"
+        }
+    }
+}

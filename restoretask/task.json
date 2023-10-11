@@ -1,0 +1,71 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "75ea738b-2918-4f1b-9e80-fb25d62f95d5",
+    "name": "elsa-restore-workflow-definition",
+    "friendlyName": "Elsa restore workflow definition",
+    "description": "Task for restoring workflow definitions from a backup .zip file",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Guido Walter (Swissteach AG)",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 8
+    },
+    "instanceNameFormat": "Elsa Restore Workflow Definition",
+    "inputs": [
+        {
+            "name": "bearerToken",
+            "type": "multiLine",
+            "label": "bearerToken for ELSA API",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "bearerToken for ELSA API"
+        },
+        {
+            "name": "restoreElsaServerUrl",
+            "type": "string",
+            "label": "ELSA Server Url",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "URL for ELSA Server"
+        },
+        {
+            "name": "restoreDeleteExistingWFDefinitions",
+            "type": "boolean",
+            "label": "Delete all before import ",
+            "defaultValue": "false",
+            "required": true,
+            "helpMarkDown": "Delete all existing workflow definitions before import "
+        },
+        {
+            "name": "restorePublishVersion",
+            "type": "boolean",
+            "label": "Publish all workflow definitions",
+            "defaultValue": "false",
+            "required": true,
+            "helpMarkDown": "As imported versions cannot be pinpointed, publish all workflow definitions that have version set to 1, are latest and are not published."
+        },
+        {
+            "name": "restoreDeleteAfterRestore",
+            "type": "boolean",
+            "label": "Delete .zip after restore",
+            "defaultValue": "true",
+            "required": true,
+            "helpMarkDown": "Delete .zip file from input path after successfull restore."
+        },        
+        {
+            "name": "restoreInputPath",
+            "type": "filePath",
+            "label": "Input Directory Path",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Path for retrieving backup .zip file from"
+        }
+    ],
+    "execution": {
+        "Node": {
+            "target": "index.js"
+        }
+    }
+}

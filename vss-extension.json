@@ -1,15 +1,15 @@
 {
     "manifestVersion": 1,
-    "id": "elsa-export-import-task ",
-    "name": "Elsa Export/Import Task",
-    "version": "0.0.1",
+    "id": "elsa-export-import-task",
+    "name": "Elsa Backup/Restore Task",
+    "version": "1.0.8",
     "publisher": "swissteach-ag",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
         }
     ],    
-    "description": "Export all current versions of elsa workflow definitions to json files. Imports Elsa workflow definitions from json files to Elsa.",
+    "description": "Backups all of specified current versions of elsa workflow definitions to. zip files. Restores Elsa workflow definitions from backu .zip files to Elsa.",
     "categories": [
         "Azure Pipelines"
     ],
@@ -18,31 +18,31 @@
     },
     "files": [
         {
-            "path": "exporttask"
+            "path": "backuptask"
         },
         {
-            "path": "importtask"
+            "path": "restoretask"
         }
     ],
     "contributions": [
         {
-            "id": "custom-build-release-task",
+            "id": "elsa-export-task",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "exporttask"
+                "name": "backuptask"
             }
         },
         {
-            "id": "custom-build-release-task",
+            "id": "elsa-import-task",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "importtask"
+                "name": "restoretask"
             }
         }        
     ]
