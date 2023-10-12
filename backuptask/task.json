@@ -9,8 +9,8 @@
     "author": "Guido Walter (Swissteach AG)",
     "version": {
         "Major": 1,
-        "Minor": 0,
-        "Patch": 8
+        "Minor": 1,
+        "Patch": 0
     },
     "instanceNameFormat": "Elsa Backup Workflow Definition",
     "inputs": [
