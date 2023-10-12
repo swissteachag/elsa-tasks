@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "elsa-export-import-task",
     "name": "Elsa Backup/Restore Task",
-    "version": "1.0.8",
+    "version": "1.1.2",
     "publisher": "swissteach-ag",
     "targets": [
         {
@@ -16,12 +16,37 @@
     "icons": {
         "default": "images/extension-icon.png"
     },
+    "galleryFlags": [
+        "Public",
+        "Preview"
+    ],
+    "content": {
+        "details": {
+          "path": "overview.md"
+        }
+    },    
+    "links": {
+        "overview": {
+          "uri": "https://github.com/swissteachag/elsa-tasks/blob/main/README.md"
+        },
+        "license": {
+          "uri": "https://github.com/swissteachag/elsa-tasks/blob/main/LICENSE"
+        },
+        "repository": {
+          "uri": "https://github.com/swissteachag/elsa-tasks"
+        },
+        "issues": {
+          "uri": "https://github.com/swissteachag/elsa-tasks/issues"
+        }
+    },    
     "files": [
         {
-            "path": "backuptask"
+            "path": "backuptask",
+            "packagePath": "backuptask"            
         },
         {
-            "path": "restoretask"
+            "path": "restoretask",
+            "packagePath": "restoretask"
         }
     ],
     "contributions": [
